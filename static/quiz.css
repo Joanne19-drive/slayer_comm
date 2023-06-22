@@ -1,0 +1,79 @@
+#phoneScreen {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 375px; /* 스마트폰 가로 크기 */
+    height: 667px; /* 스마트폰 세로 크기 */
+    background-color: #F53202;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+#statusBar {
+    height: 40px;
+    padding-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#appContainer {
+    top: 24px;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 24px);
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+}
+
+#quizContainer {
+    background-color: white;
+    padding: 30px;
+    width: 90%;
+    border-radius: 10px;
+    overflow: scroll;
+    height: 580px;
+}
+
+.question {
+    margin-bottom: 30px;
+}
+
+.question:not(#firstQuestion) {
+    display: none;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+.form-check.checked {
+    background-color: #1BB68E;
+}
+
+.form-check {
+    border-radius: 5px;
+    padding-left: 0.5rem!important;
+}
+
+.form-check:not(.form-check.checked):hover {
+    background-color: #4fb79d;
+}
+
+#submitQuiz {
+    display: flex;
+    justify-content: center;
+}
+
+#submitButton {
+    display: none;
+}
+
+#bottomContainer {
+    display: flex;
+    flex-direction: row-reverse;
+    height: 60px;
+}

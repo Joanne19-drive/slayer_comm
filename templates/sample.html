@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', path='/fav2.png')}}">
+    <link rel="stylesheet" type="text/css" href="../static/sample.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <title>Demon Slayer</title>
+</head>
+<body>
+    <div id="phoneScreen">
+        <div id="statusBar">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Kimetsu_no_Yaiba_logo_KR.svg/1200px-Kimetsu_no_Yaiba_logo_KR.svg.png" style="width: 50px">
+        </div>
+        <div id="appContainer">
+            <div id="imageContainer" style="width: 300px; height: 200px; overflow-x: scroll;">
+                <div id="imageWrapper" style="display: flex;">
+                    <img class="characterImg" src="https://image.kmib.co.kr/online_image/2021/0128/611312110015477314_1.jpg" style="width: 300px; height: 200px;">
+                    <img class="characterImg" src="https://i.namu.wiki/i/8BHNUmeW0OfUWi-heqsOJgZTZ1aQuXsfojVTfVdK45vj7ddryMuba55XivzajomjUDn2yBlim2VBf-6USkHXaQ.webp" style="width: 300px; height: 200px;">
+                    <img class="characterImg" src="https://i.namu.wiki/i/-A-HjU4OFU5cZWlu8ZHNVO9emms1xQtjIycifo1sYCisPfoCjw7jnPOvMrWMyljV3HSzaHWntWhNS1ciEsZ2Yw.webp" style="width: 300px; height: 200px;">
+                    <img class="characterImg" src="https://mblogthumb-phinf.pstatic.net/MjAyMDAzMDlfMTMg/MDAxNTgzNzI1NjYyNTk0.q177NFTm8h683Ix3OGIZQacb6BkuD8QZbXbAnWnhPUIg.2vXdljage8xSkYYzwaalySTp87P4isfZb3CJNVmWfM8g.JPEG.slpooda/1583725657438.jpg?type=w800" style="width: 300px; height: 200px;">
+                </div>
+            </div>
+            <div id="episodeContainer" class="mt-3">
+                <div class="accordion" id="accordionExample" style="width: 300px;">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                🔥 렌고쿠 쿄쥬로 🔥
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                마음을 불태워라!
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                🎵 우즈이 텐겐 🎵
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                악보를 완성하다.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                ♾️ 무이치로 ♾️
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                무한의 무.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseThree">
+                                🌸 칸로지 미츠리 🌸
+                            </button>
+                        </h2>
+                        <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                벚꽃떡을 하도 많이 먹어서 머리카락과 눈 색도 변했다고 합니다.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="scrollContainer" class="mt-3">
+                <nav id="headingNavbar" class="navbar bg-body-tertiary px-3 mb-3">
+                    <ul class="nav nav-pills" id="scrollNavbar">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#scrollspyHeading1">탄지로 입지</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#scrollspyHeading2">무한열차</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#scrollspyHeading3">환락의 거리</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#scrollspyHeading4">도공마을</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div id="headingContents" data-bs-spy="scroll" data-bs-target="#navbar-example" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" class="scrollspy-example bg-body-tertiary p-3 rounded-2" tabindex="0">
+                    <h4 id="scrollspyHeading1">탄지로 입지</h4>
+                    <p>초반에는 약간 지루한 감이 있고 상황에 대한 설명이 늘어지기도 하지만 장구저택을 거쳐 나타구모 산에 가면서 귀살대와 탄지로 일행의 진면모가 드러난다.</p>
+                    <h4 id="scrollspyHeading2">무한열차</h4>
+                    <p>염주 렌고쿠 쿄쥬로가 하드캐리하는 극장판. 마지막에 등장한 예상치 못한 인물과 쿄쥬로의 액션신이 진수.</p>
+                    <h4 id="scrollspyHeading3">환락의 거리</h4>
+                    <p>음주 우즈이 텐겐과 함께하는 탄지로 일행. 온 힘을 다해 상현 6과 싸우는 탄지로 일행의 모습이 상당히 인상적이다.</p>
+                    <h4 id="scrollspyHeading4">도공마을</h4>
+                    <p>TV판이 이렇게 탄탄하고 화려하게 나올 줄이야. 각 캐릭터의 서사와 상현들과의 전투가 어우러져 최고의 시너지를 낸다.</p>
+                </div>
+            </div>
+            <div id="quizContainer" class="mt-3">
+                <a href="/quiz" class="btn btn-info btn-md">귀멸의 칼날 퀴즈 풀러가기</a>
+            </div>
+            <div id="bottomContainer">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var phoneScreen = document.getElementById("phoneScreen");
+        var container = document.getElementById("imageContainer");
+        var wrapper = document.getElementById("imageWrapper");
+
+        container.addEventListener("scroll", function() {
+            // 스크롤 위치를 구합니다.
+            var scrollPos = container.scrollLeft;
+
+            // 현재 스크롤 위치에 따라 이미지를 이동시킵니다.
+            wrapper.style.transform = "translateX(-" + scrollPos + "px)";
+
+            // 현재 보여지는 이미지와 비율에 따라 배경색을 변경합니다.
+            if (scrollPos < 75) {
+                phoneScreen.style.backgroundColor= "#F53202";
+            } else if (scrollPos >= 75 && scrollPos < 225) {
+                phoneScreen.style.backgroundColor= "#0F2B3F";
+            } else if (scrollPos >= 225 && scrollPos < 375) {
+                phoneScreen.style.backgroundColor= "#7BBEB2";
+            } else if (scrollPos >= 375) {
+                phoneScreen.style.backgroundColor= "#E9A6BC";
+            }
+        });
+
+        var seasonContents = document.getElementById("headingContents");
+        var navItems = document.getElementsByClassName("nav-item");
+
+        seasonContents.addEventListener("scroll", function() {
+            var scrollLoc = seasonContents.scrollTop;
+            
+            for (var i=0; i < 4; i++) {
+                navItems[i].style.transform = "translateX(-" + scrollLoc/1.8 + "px)";
+            }
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+</body>
+</html>

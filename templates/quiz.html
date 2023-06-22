@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../static/quiz.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <title>Demon Slayer</title>
+</head>
+<body>
+    <div id="phoneScreen">
+        <div id="statusBar">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Kimetsu_no_Yaiba_logo_KR.svg/1200px-Kimetsu_no_Yaiba_logo_KR.svg.png" style="width: 50px">
+        </div>
+        <div id="appContainer">
+            <form id="quizContainer" action="/quiz_result" method="post">
+                <h2 style="text-align: center;">퀴즈</h2>
+                <div class="question" id="firstQuestion">
+                    <strong>1번 문제</strong> 
+                    <p>다음 중 기본 5개 계파 호흡이 아닌 것은?</p>
+                    <img class="pb-3" src="https://blog.kakaocdn.net/dn/b649is/btq6MTBJXi6/CsDfEqkiPKPsydwhJanoH1/img.jpg" style="width: 270px;">
+                    <div class="radio-set">
+                        <div class="form-check" onclick="checkThroughParent(this, 'question1')">
+                            <input type="radio" class="form-check-input" name="question1" id="water" value="물의 호흡"/>
+                            <label for="water">물의 호흡</label>
+                        </div>
+                        <div class="form-check" onclick="checkThroughParent(this, 'question1')">
+                            <input type="radio" class="form-check-input" name="question1" id="sun" value="해의 호흡"/>
+                            <label for="sun">해의 호흡</label>
+                        </div>
+                        <div class="form-check" onclick="checkThroughParent(this, 'question1')">
+                            <input type="radio" class="form-check-input" name="question1" id="lightening" value="번개의 호흡"/>
+                            <label for="lightening">번개의 호흡</label>
+                        </div>
+                        <div class="form-check" onclick="checkThroughParent(this, 'question1')">
+                            <input type="radio" class="form-check-input" name="question1" id="wind" value="바람의 호흡"/>
+                            <label for="wind">바람의 호흡</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="question">
+                    <strong>2번 문제</strong> 
+                    <p>다음 중 탄지로 동생의 이름이 아닌 것은?</p>
+                    <img class="pb-3" src="https://nujhrcqkiwag1408085.cdn.ntruss.com/static/upload/movie_still_images/81844/9a3f247683d91f0e60ed7d9fc1056efc.jpg" style="width: 270px;">
+                    <div class="radio-set">
+                        <div class="form-check" onclick="checkThroughParent(this, 'question2')">
+                            <input type="radio" class="form-check-input" name="question2" id="타케오" value="타케오"/>
+                            <label for="타케오">타케오</label>
+                        </div>
+                        <div class="form-check" onclick="checkThroughParent(this, 'question2')">
+                            <input type="radio" class="form-check-input" name="question2" id="로쿠타" value="로쿠타"/>
+                            <label for="로쿠타">로쿠타</label>
+                        </div>
+                        <div class="form-check" onclick="checkThroughParent(this, 'question2')">
+                            <input type="radio" class="form-check-input" name="question2" id="카이가쿠1" value="카이가쿠"/>
+                            <label for="카이가쿠1">카이가쿠</label>
+                        </div>
+                        <div class="form-check" onclick="checkThroughParent(this, 'question2')">
+                            <input type="radio" class="form-check-input" name="question2" id="하나코" value="하나코"/>
+                            <label for="하나코">하나코</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="question">
+                    <strong>3번 문제</strong> 
+                    <p>주합회의 편에서 네즈코 즉결 처분에 동의한 적이 없는 주는?</p>
+                    <img class="pb-3" src="https://i0.wp.com/newsgeek.com.br/wp-content/uploads/2023/02/Todos-os-poderes-da-Nezuko.jpg?resize=780%2C470&ssl=1" style="width: 270px;">
+                    <div class="radio-set">
+                        <div class="form-check" onclick="checkThroughParent(this, 'question3')">
+                            <input type="radio" class="form-check-input" name="question3" id="렌고쿠" value="렌고쿠 쿄쥬로"/>
+                            <label for="렌고쿠">렌고쿠 쿄쥬로</label>
+                        </div>
+                        <div class="form-check" onclick="checkThroughParent(this, 'question3')">
+                            <input type="radio" class="form-check-input" name="question3" id="시나즈가와" value="시나즈가와 사네미"/>
+                            <label for="시나즈가와">시나즈가와 사네미</label>
+                        </div>
+                        <div class="form-check" onclick="checkThroughParent(this, 'question3')">
+                            <input type="radio" class="form-check-input" name="question3" id="이구로" value="이구로 오바나이"/>
+                            <label for="이구로">이구로 오바나이</label>
+                        </div>
+                        <div class="form-check" onclick="checkThroughParent(this, 'question3')">
+                            <input type="radio" class="form-check-input" name="question3" id="토키토" value="토키토 무이치로"/>
+                            <label for="토키토">토키토 무이치로</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="question">
+                    <strong>4번 문제</strong> 
+                    <p>다음 중 아가츠마 젠이츠에 대한 설명으로 적절하지 않은 것은?</p>
+                    <img class="mb-3" src="https://i1.sndcdn.com/artworks-Cxn0SPxt8XX5NhBN-oHJlkA-t500x500.jpg" style="width: 270px;">
+                    <div class="radio-set">
+                        <div class="form-check" onclick="checkThroughParent(this, 'question4')">
+                            <input type="radio" class="form-check-input" name="question4" id="소리" value="소리"/>
+                            <label for="소리">소리를 통해 사람의 마음을 알 수 있다</label>
+                        </div>
+                        <div class="form-check" onclick="checkThroughParent(this, 'question4')">
+                            <input type="radio" class="form-check-input" name="question4" id="벽력일섬" value="벽력일섬"/>
+                            <label for="벽력일섬">번개의 호흡을 사용하지만 일의 형 벽력일섬 밖에 사용하지 못한다</label>
+                        </div>
+                        <div class="form-check" onclick="checkThroughParent(this, 'question4')">
+                            <input type="radio" class="form-check-input" name="question4" id="카이가쿠2" value="카이가쿠"/>
+                            <label for="카이가쿠2">카이가쿠와는 친형제 사이이다</label>
+                        </div>
+                        <div class="form-check" onclick="checkThroughParent(this, 'question4')">
+                            <input type="radio" class="form-check-input" name="question4" id="탈색" value="탈색"/>
+                            <label for="탈색">나무 위에 있다가 벼락에 맞아 머리카락이 탈색되었다</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="question">
+                    <strong>5번 문제</strong> 
+                    <p>다음 중 토미오카 기유가 좋아하는 음식은?</p>
+                    <img src="https://mblogthumb-phinf.pstatic.net/MjAyMDA5MjdfMzAg/MDAxNjAxMTgxNTk0MTk4.5m_xdQd5Ju6MyjQgPGRJxK-tVE84kNJU7v_9dCjI8UMg.1h0NLsaTbVUmEYnPy4_XF8YVcqa568iK2F-IxWRyj1sg.JPEG.giyaming/7.jpg?type=w800" style="width: 270px;">
+                    <div class="radio-set">
+                        <div class="form-check" onclick="checkThroughParent(this, 'question5')">
+                            <input type="radio" class="form-check-input" name="question5" id="연어" value="연어"/>
+                            <label for="연어">연어 무조림</label>
+                        </div>
+                        <div class="form-check" onclick="checkThroughParent(this, 'question5')">
+                            <input type="radio" class="form-check-input" name="question5" id="다시마" value="다시마"/>
+                            <label for="다시마">말린 다시마</label>
+                        </div>
+                        <div class="form-check" onclick="checkThroughParent(this, 'question5')">
+                            <input type="radio" class="form-check-input" name="question5" id="알사탕" value="알사탕"/>
+                            <label for="알사탕">알사탕</label>
+                        </div>
+                        <div class="form-check" onclick="checkThroughParent(this, 'question5')">
+                            <input type="radio" class="form-check-input" name="question5" id="장아찌" value="장아찌"/>
+                            <label for="장아찌">마늘 장아찌</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="question">
+                    <strong>6번 문제</strong> 
+                    <p>도공마을에서 탄지로의 훈련을 도와준 소년의 이름은?</p>
+                    <img class="pb-3" src="https://i.namu.wiki/i/k2zOL6RKtyTnjJnMri9nX3JWnOF4rnVoK1lO9oczSdSXPAe0MKIpbfdKTsX1I-EahpqEz3yU-VBCc3k3vyBKjg.webp" style="width: 270px;">
+                    <div class="radio-set">
+                        <div class="form-check" onclick="checkThroughParent(this, 'question6')">
+                            <input type="radio" class="form-check-input" name="question6" id="코토하" value="코토하"/>
+                            <label for="코토하">코토하</label>
+                        </div>
+                        <div class="form-check" onclick="checkThroughParent(this, 'question6')">
+                            <input type="radio" class="form-check-input" name="question6" id="카나오" value="카나오"/>
+                            <label for="카나오">카나오</label>
+                        </div>
+                        <div class="form-check" onclick="checkThroughParent(this, 'question6')">
+                            <input type="radio" class="form-check-input" name="question6" id="호타루" value="호타루"/>
+                            <label for="호타루">호타루</label>
+                        </div>
+                        <div class="form-check" onclick="checkThroughParent(this, 'question6')">
+                            <input type="radio" class="form-check-input" name="question6" id="코테츠" value="코테츠"/>
+                            <label for="코테츠">코테츠</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="question">
+                    <strong>7번 문제</strong> 
+                    <p>다음 중 고토의 지난 행적이 아닌 것은?</p>
+                    <img class="pb-3" src="https://staticg.sportskeeda.com/editor/2022/02/5aee1-16448379425568-1920.jpg" style="width: 270px;">
+                    <div class="radio-set">
+                        <div class="form-check" onclick="checkThroughParent(this, 'question7')">
+                            <input type="radio" class="form-check-input" name="question7" id="주합회의" value="주합회의"/>
+                            <label for="주합회의">주합회의에서 탄지로에게 인사하라고 한 대원이다</label>
+                        </div>
+                        <div class="form-check" onclick="checkThroughParent(this, 'question7')">
+                            <input type="radio" class="form-check-input" name="question7" id="복식의 호흡" value="복식의 호흡"/>
+                            <label for="복식의 호흡">의식불명이었던 탄지로가 깨어나자 복식의 호흡을 자랑했다</label>
+                        </div>
+                        <div class="form-check" onclick="checkThroughParent(this, 'question7')">
+                            <input type="radio" class="form-check-input" name="question7" id="무한열차" value="무한열차"/>
+                            <label for="무한열차">무한열차 전투 현장의 뒷처리를 담당했다</label>
+                        </div>
+                        <div class="form-check" onclick="checkThroughParent(this, 'question7')">
+                            <input type="radio" class="form-check-input" name="question7" id="나비저택" value="나비저택"/>
+                            <label for="나비저택">나비저택에 처음으로 탄지로를 데려갔다</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="question">
+                    <strong>8번 문제</strong> 
+                    <p>도공마을에서 미츠리는 무엇을 바라보고 또 배가 고파졌나?</p>
+                    <img class="pb-3" src="https://i.namu.wiki/i/0PCi3H3DliVfFKokNgajTdOTlXPfEeO3HtEtGtpN-DTizvZ6T4mAb-NgvLuwY6DdEljB238HFi8FRZd4dTe9dQ.webp" style="width: 270px;">
+                    <div class="radio-set">
+                        <div class="form-check" onclick="checkThroughParent(this, 'question8')">
+                            <input type="radio" class="form-check-input" name="question8" id="오니기리" value="오니기리"/>
+                            <label for="오니기리">오니기리</label>
+                        </div>
+                        <div class="form-check" onclick="checkThroughParent(this, 'question8')">
+                            <input type="radio" class="form-check-input" name="question8" id="벚꽃떡" value="벚꽃떡"/>
+                            <label for="벚꽃떡">벚꽃떡</label>
+                        </div>
+                        <div class="form-check" onclick="checkThroughParent(this, 'question8')">
+                            <input type="radio" class="form-check-input" name="question8" id="라멘" value="라멘"/>
+                            <label for="라멘">라멘</label>
+                        </div>
+                        <div class="form-check" onclick="checkThroughParent(this, 'question8')">
+                            <input type="radio" class="form-check-input" name="question8" id="민물생선" value="민물생선"/>
+                            <label for="민물생선">민물생선</label>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <button id="nextQuiz" type="button" class="btn btn-sm btn-danger">다음으로</button>
+                </div>
+                <div id="submitQuiz">
+                    <button id="submitButton" type="submit" class="btn btn-danger">제출하기</button>
+                </div>
+            </form>
+            <div id="bottomContainer">
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        var questions = document.getElementsByClassName("question");
+        var nextButton = document.getElementById("nextQuiz");
+        var submitButton = document.getElementById("submitButton");
+        var page = 0;
+
+        nextButton.addEventListener("click", function() {
+            let radioGroup = document.getElementsByName(`question${page+1}`);
+            let flag = false;
+            for (var radio of radioGroup) {
+                if (radio.checked) {
+                    flag=true;
+                    break
+                }
+            }
+            if (!flag) {
+                alert("답을 선택하세용");
+            }
+            if (flag === true && page < 7) {
+                questions[page].style.display="none";
+                page++;
+                questions[page].style.display="block";
+                if (page == 7) {
+                    nextButton.style.display="none";
+                    submitButton.style.display="block";
+                }
+            } 
+        });
+
+        var quizForm = document.getElementById("quizContainer");
+        quizForm.addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            let submitFlag = false;
+            let lastQuestion = document.getElementsByName("question8");
+            for (var radio of lastQuestion) {
+                if (radio.checked) {
+                    submitFlag = true;
+                    break
+                }
+            }
+            if (!submitFlag) {
+                alert("답을 선택하세용");
+                return
+            } else {
+                quizForm.submit();
+            }
+        });
+
+        function checkThroughParent(parent, radioName) {
+            var childRadio = parent.querySelector('input');
+            childRadio.checked = true;
+            var allRadios = document.querySelectorAll('input[name="' + radioName + '"]');
+            for (var i = 0; i < allRadios.length; i++) {
+                var currentRadio = allRadios[i];
+                var currentParent = currentRadio.parentNode;
+
+                if (currentRadio.checked) {
+                    currentParent.classList.add("checked");
+                } else {
+                    currentParent.classList.remove("checked");
+                }
+            }
+        }
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+</body>
+</html>
