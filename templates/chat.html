@@ -1,0 +1,111 @@
+{% extends "common.html" %}
+
+{% block head %}
+<link rel="stylesheet" type="text/css" href="../static/chat.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+{% endblock %}
+
+{% block content %}
+<div id="chat-container">
+    <div id="chat-title">
+        <p>소소한 이야기를 나눠보아요</p>
+    </div>
+    <button id="checkParticipants" type="button" class="btn btn-sm">
+        <span class="material-symbols-outlined">
+            groups
+        </span>
+    </button>
+    <div id="participantsList">
+        <ul id="participants">
+        </ul>
+    </div>
+    <div id="messageContainer" class="mt-4">
+        <ul id='messages'>
+        </ul>
+    </div>
+    <form action="" onsubmit="sendMessage(event)">
+        <input class="form-control" type="text" id="username" placeholder="이름을 입력하세요우"/>
+        <input class="form-control" type="text" id="messageText" autocomplete="off" placeholder="메시지를 입력하세요우" style="display: none;"/>
+        <button id="nameSubmit" class="btn btn-sm btn-danger">설정</button>
+        <button id="messageSubmit" class="btn btn-sm btn-danger">전송</button>
+    </form>
+</div>
+{% endblock %}
+
+{% block script %}
+<script>
+    var ws;
+    var usernameInput = document.getElementById('username');
+    var messageInput = document.getElementById('messageText');
+    var nameSubmit = document.getElementById('nameSubmit');
+    var messageSubmit = document.getElementById('messageSubmit');
+
+    function sendMessage(event) {
+        event.preventDefault();
+        if (!ws) {
+            ws = new WebSocket("ws://localhost:8000/ws/" + usernameInput.value);
+            ws.onmessage = function (event) {
+                var messages = document.getElementById('messages');
+                var message = document.createElement('li');
+                var content = document.createTextNode(event.data);
+                message.appendChild(content);
+                messages.appendChild(message);
+                var messageContainer = document.getElementById("messageContainer");
+                messageContainer.scrollTop = messageContainer.scrollHeight;
+            };
+            usernameInput.disabled = true;
+            usernameInput.style.display = "none";
+            messageInput.style.display = "block";
+            nameSubmit.style.display = "none";
+            messageSubmit.style.display = "block";
+        } else {
+            ws.send(messageInput.value);
+            messageInput.value = '';
+        }
+    }
+
+    var participantsDiv = document.getElementById("participants");
+    var participantsButton = document.getElementById("checkParticipants");
+    var partticipantsList = document.getElementById("participantsList");
+
+    async function fetchParticipants() {
+        var response = await fetch("/participants");
+        var participants = await response.json();
+        return participants;
+    }
+
+    async function checkParticipants() {
+        var participants = await fetchParticipants();
+
+        while (participantsDiv.firstChild) {
+            participantsDiv.removeChild(participantsDiv.firstChild);
+        }
+
+        if (participants.length === 0) {
+            const participantItem = document.createElement("li");
+            participantItem.textContent = "참가자 없음";
+            participantsDiv.appendChild(participantItem);
+        } else {
+            for (const participant of participants) {
+                const participantItem = document.createElement("li");
+                participantItem.textContent = participant;
+                participantsDiv.appendChild(participantItem);
+            }
+        }
+
+        participantsList.style.display = "block";
+    }
+
+    var checkFlag = false;
+
+    participantsButton.addEventListener("click", function() {
+        if (!checkFlag) {
+            checkParticipants();
+            checkFlag = true;
+        } else {
+            participantsList.style.display = "none";
+            checkFlag = false;
+        }
+    })
+</script>
+{% endblock %}

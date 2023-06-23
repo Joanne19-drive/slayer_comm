@@ -1,0 +1,79 @@
+#chat-container {
+    background-color: white;
+    width: 85%;
+    height: 90%;
+    margin: auto;
+    border-radius: 10px;
+    position: relative;
+}
+
+#chat-container > button {
+    position: absolute;
+    top: 8px;
+    right: 11px;
+}
+
+#chat-title {
+    padding-top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#chat-title > p {
+    font-weight: 700;
+}
+
+#checkParticipants {
+    background-color: #08AC7E;
+    color: white;
+}
+
+#checkParticipants:hover {
+    background-color: #27c799;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+}
+
+.form-control {
+    width: 70%!important;
+}
+
+#nameSubmit, #messageSubmit {
+    width: 17%;
+    margin-left: 2%;
+}
+
+#messageSubmit {
+    display: none;
+}
+
+#participantsList {
+    position: absolute;
+    width: 200px;
+    z-index: 100;
+    background-color: #27c799;
+    color: white;
+    top: 61px;
+    right: 56px;
+    overflow: auto;
+    display: none;
+    border-radius: 5px;
+    height: 200px;
+}
+
+#participants > li {
+    margin-top: 7px;
+}
+
+#messageContainer {
+    height: 75%;
+    overflow: scroll;
+}
+
+#messages > li {
+    list-style-type: none;
+}
