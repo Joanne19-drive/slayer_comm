@@ -81,7 +81,7 @@ async def websocket_endpoint(websocket: WebSocket, username: str):
 
 @app.get("/participants")
 async def show_participants():
-    return list(manager.active_connections.keys());
+    return list(manager.active_connections.keys())
 
 
 def get_score_category(score):
