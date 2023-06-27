@@ -1,0 +1,89 @@
+#phoneScreen {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 375px; /* 스마트폰 가로 크기 */
+    height: 667px; /* 스마트폰 세로 크기 */
+    background-color: pink;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+#statusBar {
+    height: 40px;
+    padding-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#appContainer {
+    top: 24px;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 24px);
+    overflow: auto;
+}
+
+#bottomContainer {
+    display: flex;
+    flex-direction: row-reverse;
+    height: 60px;
+}
+
+#imageContainer {
+    margin: auto;
+    border-radius: 7px;
+}
+
+#episodeContainer {
+    display: flex;
+    justify-content: center;
+}
+
+#textContainer {
+    width: 300px;
+    height: 200px;
+    overflow-y: scroll;
+    border: 1px solid #ccc;
+    background-color: white;
+}
+
+#textContent {
+    padding: 10px; 
+}
+
+#scrollContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nav {
+    display: block!important;
+    overflow: auto;
+    white-space: nowrap;
+}
+
+.nav-item {
+    display: inline-block;
+}
+
+#headingNavbar {
+    width: 300px;
+    border-radius: 5px;
+}
+
+#headingContents {
+    width: 300px;
+    height: 300px;
+    overflow-y: scroll;
+}
+
+#quizContainer, #archiveContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

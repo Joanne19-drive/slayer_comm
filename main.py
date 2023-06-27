@@ -29,12 +29,12 @@ class ConnectionManager:
 # 귀멸의 칼날
 @app.get("/", response_class=HTMLResponse)
 async def root(request: Request):
-    return templates.TemplateResponse("sample.html", {"request": request})
+    return templates.TemplateResponse("demon_slayer/sample.html", {"request": request})
 
 
 @app.get("/quiz", response_class=HTMLResponse)
 async def career(request: Request):
-    return templates.TemplateResponse("quiz.html", {"request": request})
+    return templates.TemplateResponse("demon_slayer/quiz.html", {"request": request})
 
 
 @app.post("/quiz_result", response_class=HTMLResponse)
@@ -45,19 +45,19 @@ async def quiz_result(request: Request):
     for i in range(8):
         if answer[i] == form_data.get(f"question{i + 1}"):
             score += 1
-    return templates.TemplateResponse("quiz_result.html",
+    return templates.TemplateResponse("demon_slayer/quiz_result.html",
                                       {"request": request, "score": score, "category": get_score_category(score)})
 
 
 @app.get("/archive", response_class=HTMLResponse)
 async def character_archive(request: Request):
-    return templates.TemplateResponse("archive.html", {"request": request})
+    return templates.TemplateResponse("demon_slayer/archive.html", {"request": request})
 
 
 # 채팅방
 @app.get("/chatroom", response_class=HTMLResponse)
 async def chatroom(request: Request):
-    return templates.TemplateResponse("chat.html", {"request": request})
+    return templates.TemplateResponse("demon_slayer/chat.html", {"request": request})
 
 
 manager = ConnectionManager()
@@ -90,22 +90,22 @@ async def career(request: Request):
 # TB프로젝트
 @app.get("/adot/fashion/mycloset", response_class=HTMLResponse)
 async def my_closet(request: Request):
-    return templates.TemplateResponse("mycloset.html", {"request": request})
+    return templates.TemplateResponse("adot/mycloset.html", {"request": request})
 
 
 @app.get("/adot/fashion/add_items", response_class=HTMLResponse)
 async def add_items(request: Request):
-    return templates.TemplateResponse("add_items.html", {"request": request})
+    return templates.TemplateResponse("adot/add_items.html", {"request": request})
 
 
 @app.get("/adot/fashion/save_completed", response_class=HTMLResponse)
 async def save_completed(request: Request):
-    return templates.TemplateResponse("save_result.html", {"request": request})
+    return templates.TemplateResponse("adot/save_result.html", {"request": request})
 
 
 @app.get("/adot/fashion/14230294", response_class=HTMLResponse)
 async def item_detail(request: Request):
-    return templates.TemplateResponse("item_detail.html", {"request": request})
+    return templates.TemplateResponse("adot/item_detail.html", {"request": request})
 
 
 def get_score_category(score):
