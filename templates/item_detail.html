@@ -1,0 +1,51 @@
+{% extends "adot_common.html" %}
+
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', path='/adot/item_detail.css')}}">
+{% endblock %}
+
+{% block content %}
+<div id="closetBar">
+    <a href="/adot/fashion/mycloset" style="all: unset; cursor: pointer;">
+        <span id="leftMenu" class="material-symbols-outlined">
+            arrow_back_ios
+        </span>
+    </a>
+    <p>나의 옷장</p>
+    <span id="rightSearch" class="material-symbols-outlined">
+        search
+    </span>
+</div>
+<div class="division-line"></div>
+<div id="itemContainer">
+    <p id="itemTitle">Pink Faux Fur Jacket</p>
+    <div id="itemDetailContainer">
+        <div id="itemImageBox">
+            <img src="{{ url_for('static', path='/clothes/pink.png')}}">
+        </div>
+        <div id="itemDetailInfo">
+            <table>
+                <tr>
+                    <td>계절감</td>
+                    <td>겨울</td>
+                </tr>
+                <tr>
+                    <td>신축성</td>
+                    <td>없음</td>
+                </tr>
+                <tr>
+                    <td>두께</td>
+                    <td>도톰해요</td>
+                </tr>
+                <tr>
+                    <td>비침</td>
+                    <td>없음</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block script %}
+{% endblock %}

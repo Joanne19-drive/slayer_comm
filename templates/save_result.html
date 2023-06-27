@@ -1,0 +1,21 @@
+{% extends "adot_common.html" %}
+
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', path='/adot/save_result.css')}}">
+{% endblock %}
+
+{% block content %}
+<div id="resultContainer">
+    <div id="innerResultContainer">
+        <img id="checkPng" src="{{ url_for('static', path='/adot/check.png')}}">
+        <p>저장 완료</p>
+        <div id="newItemImage">
+            <img src="{{ url_for('static', path='/clothes/hoodie.png')}}"/>
+        </div>
+        <button class="btn btn-light" id="backToMyCloset" onclick="window.location.assign('/adot/fashion/mycloset')">나의 옷장 바로가기</button>
+    </div>
+</div>
+{% endblock %}
+
+{% block script %}
+{% endblock %}

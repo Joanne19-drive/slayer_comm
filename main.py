@@ -26,14 +26,10 @@ class ConnectionManager:
             await connection.send_text(f"[{sender}] {message}")
 
 
+# 귀멸의 칼날
 @app.get("/", response_class=HTMLResponse)
 async def root(request: Request):
     return templates.TemplateResponse("sample.html", {"request": request})
-
-
-@app.get("/career", response_class=HTMLResponse)
-async def career(request: Request):
-    return templates.TemplateResponse("career.html", {"request": request})
 
 
 @app.get("/quiz", response_class=HTMLResponse)
@@ -58,6 +54,7 @@ async def character_archive(request: Request):
     return templates.TemplateResponse("archive.html", {"request": request})
 
 
+# 채팅방
 @app.get("/chatroom", response_class=HTMLResponse)
 async def chatroom(request: Request):
     return templates.TemplateResponse("chat.html", {"request": request})
@@ -82,6 +79,33 @@ async def websocket_endpoint(websocket: WebSocket, username: str):
 @app.get("/participants")
 async def show_participants():
     return list(manager.active_connections.keys())
+
+
+# 커리어팀
+@app.get("/career", response_class=HTMLResponse)
+async def career(request: Request):
+    return templates.TemplateResponse("career.html", {"request": request})
+
+
+# TB프로젝트
+@app.get("/adot/fashion/mycloset", response_class=HTMLResponse)
+async def my_closet(request: Request):
+    return templates.TemplateResponse("mycloset.html", {"request": request})
+
+
+@app.get("/adot/fashion/add_items", response_class=HTMLResponse)
+async def add_items(request: Request):
+    return templates.TemplateResponse("add_items.html", {"request": request})
+
+
+@app.get("/adot/fashion/save_completed", response_class=HTMLResponse)
+async def save_completed(request: Request):
+    return templates.TemplateResponse("save_result.html", {"request": request})
+
+
+@app.get("/adot/fashion/14230294", response_class=HTMLResponse)
+async def item_detail(request: Request):
+    return templates.TemplateResponse("item_detail.html", {"request": request})
 
 
 def get_score_category(score):

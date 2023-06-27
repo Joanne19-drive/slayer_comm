@@ -1,0 +1,61 @@
+#closetBar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+#closetBar > p {
+    margin: 0;
+}
+
+#leftMenu {
+    position: absolute;
+    left: 20px;
+    top: 0px;
+}
+
+#rightSearch {
+    position: absolute;
+    right: 20px;
+}
+
+#itemContainer {
+    background-color: #e2e8f4;
+    padding-bottom: 20px;
+}
+
+#itemTitle {
+    text-align: center;
+    font-weight: 600;
+    padding: 10px 0;
+    margin: 0;
+    background-color: white;
+}
+
+#itemImageBox {
+    height: 290px;
+    width: 80%;
+    background-color: white;
+    overflow: hidden;
+    position: relative;
+    margin: 36px auto 20px;
+    border-radius: 20px;
+    box-shadow: inset 0px 0px 8px 0px black;
+}
+
+#itemImageBox > img {
+    width: 100%;
+    position: absolute;
+    top: -79px;
+}
+
+#itemDetailInfo > table {
+    margin-left: 80px;
+}
+
+tr > td:first-child {
+    font-weight: 700;
+    width: 80px;
+}

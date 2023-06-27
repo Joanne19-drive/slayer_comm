@@ -1,0 +1,40 @@
+{% extends "adot_common.html" %}
+
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', path='/adot/add_items.css')}}">
+{% endblock %}
+
+{% block content %}
+<div id="closetBar">
+    <a href="/adot/fashion/mycloset" style="all: unset; cursor: pointer;">
+        <span id="leftMenu" class="material-symbols-outlined">
+            arrow_back_ios
+        </span>
+    </a>
+    <p>나의 옷장</p>
+    <span id="rightSearch" class="material-symbols-outlined">
+        search
+    </span>
+</div>
+<div class="division-line"></div>
+<div id="chooseMedia">
+    <p>옷 추가하기</p>
+</div>
+<div id="mediaOptions">
+    <button class="btn" onclick="window.location.assign('/adot/fashion/save_completed')">
+        <span class="material-symbols-outlined">
+            add_a_photo
+        </span>
+        <p>직접 촬영하기</p>
+    </button>
+    <button class="btn" onclick="window.location.assign('/adot/fashion/save_completed')">
+        <span class="material-symbols-outlined">
+            photo_library
+        </span>
+        <p>앨범에서 선택하기</p>
+    </button>
+</div>
+{% endblock %}
+
+{% block script %}
+{% endblock %}

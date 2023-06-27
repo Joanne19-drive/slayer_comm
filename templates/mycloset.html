@@ -1,0 +1,174 @@
+{% extends "adot_common.html" %}
+
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', path='/adot/mycloset.css')}}">
+{% endblock %}
+
+{% block content %}
+<div id="closetBar">
+    <span id="leftMenu" class="material-symbols-outlined">
+        arrow_back_ios
+    </span>
+    <p>나의 옷장</p>
+    <span id="rightSearch" class="material-symbols-outlined">
+        search
+    </span>
+</div>
+<div class="division-line"></div>
+<ul class="nav nav-pills">
+    <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="#">Total</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#">Daily</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#">Training</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#">Dating</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#">Office</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#">Wedding</a>
+    </li>
+</ul>
+<div id="closetContainer">
+    <div id="closetMain">
+        <div id="tops">
+            <div class="clickable">
+                <a href="">
+                    <img class="image" src="{{ url_for('static', path='/clothes/yellow.png')}}" style="left: 64px; top: -54px; z-index: 2;">
+                </a>
+            </div>
+            <div class="clickable">
+                <a href="">
+                    <img class="image" src="{{ url_for('static', path='/clothes/white.png')}}" style="left: 264px; top: -3px;">
+                </a>
+            </div>
+            <div class="clickable">
+                <a href="/adot/fashion/14230294">
+                    <img class="image" src="{{ url_for('static', path='/clothes/pink.png')}}" style="left: 168px; top: -46px;">
+                </a>
+            </div>
+            <div class="image" id="lastImageMargin"></div>
+        </div>
+        <div id="bottoms">
+            <div class="clickable">
+                <a href="">
+                    <img class="image2" src="{{ url_for('static', path='/clothes/grey.png')}}" style="left: 266px; top: -22px;">
+                </a>
+            </div>
+            <div class="clickable">
+                <a href="">
+                    <img class="image2" src="{{ url_for('static', path='/clothes/check_black.png')}}" style="left: 65px; top: -46px; z-index: 2;">
+                </a>
+            </div>
+            <div class="clickable">
+                <a href="">
+                    <img class="image2" src="{{ url_for('static', path='/clothes/jeans.png')}}" style="left: 170px; top: -9px;">
+                </a>
+            </div>
+            <div class="image2" id="lastImageMargin"></div>
+        </div>
+    </div>
+    <div id="addClothes">
+        <button class="btn" style="all: unset; cursor: pointer;" onclick="openAndClose()">
+            <span class="material-symbols-outlined">
+                add_circle
+            </span>
+        </button>
+        <div id="chooseCategoryOrClothes">
+            <button class="btn" id="createCategory">카테고리</button>
+            <div class="division-line"></div>
+            <button class="btn" id="addItem" onclick="window.location.assign('/adot/fashion/add_items')">옷</button>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block script %}
+<script>
+    window.addEventListener('DOMContentLoaded', function() {
+        var container = document.querySelector('#tops');
+        var images = document.querySelectorAll('.image');
+
+        container.addEventListener('scroll', function() {
+            var containerWidth = container.offsetWidth;
+            var scrollLeft = container.scrollLeft;
+
+            var centerIndex = 0;
+            var minDistance = Infinity;
+
+            images.forEach(function(image, index) {
+            var imageWidth = image.offsetWidth;
+            var imageLeft = image.offsetLeft;
+
+            var distance = Math.abs((containerWidth / 2) - (imageLeft - scrollLeft + (imageWidth / 2)));
+
+            if (distance < minDistance) {
+                minDistance = distance;
+                centerIndex = index;
+            }
+            });
+
+            images.forEach(function(image, index) {
+            if (index === centerIndex) {
+                image.style.zIndex = '3';
+            } else {
+                image.style.zIndex = '1';
+            }
+            });
+        });
+    });
+
+    window.addEventListener('DOMContentLoaded', function() {
+        var container = document.querySelector('#bottoms');
+        var images = document.querySelectorAll('.image2');
+
+        container.addEventListener('scroll', function() {
+            var containerWidth = container.offsetWidth;
+            var scrollLeft = container.scrollLeft;
+
+            var centerIndex = 0;
+            var minDistance = Infinity;
+
+            images.forEach(function(image, index) {
+            var imageWidth = image.offsetWidth;
+            var imageLeft = image.offsetLeft;
+
+            var distance = Math.abs((containerWidth / 2) - (imageLeft - scrollLeft + (imageWidth / 2)));
+
+            if (distance < minDistance) {
+                minDistance = distance;
+                centerIndex = index;
+            }
+            });
+
+            images.forEach(function(image, index) {
+            if (index === centerIndex) {
+                image.style.zIndex = '3';
+            } else {
+                image.style.zIndex = '1';
+            }
+            });
+        });
+    });
+
+    var open = false;
+
+    function openAndClose() {
+        var chooseBlock = document.getElementById("chooseCategoryOrClothes");
+
+        if (open) {
+            chooseBlock.style.display = "none";
+            open = false;
+        } else {
+            chooseBlock.style.display = "block";
+            open = true;
+        }
+    }
+</script>
+{% endblock %}

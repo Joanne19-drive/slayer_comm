@@ -1,0 +1,52 @@
+#phoneScreen {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 375px; /* 스마트폰 가로 크기 */
+    height: 667px; /* 스마트폰 세로 크기 */
+    background-color: white;
+    border-radius: 20px;
+    overflow: hidden;
+    border: black solid 2px;
+}
+
+#statusBar {
+    height: 40px;
+    padding-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+#statusBar > p {
+    margin: 0px;
+}
+
+#statusBar > button {
+    position: absolute;
+    right: 15px;
+    background: none;
+    border: none;
+    display: flex;
+}
+
+.division-line {
+    border-top: 1px solid #F0F0F0;
+}
+
+#appContainer {
+    top: 24px;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 24px);
+    overflow: auto;
+}
+
+#bottomContainer {
+    display: flex;
+    flex-direction: row-reverse;
+    height: 60px;
+}
