@@ -1,3 +1,7 @@
+* {
+    cursor: url(../SangHwa.png) 2 2, auto;
+}
+
 #phoneScreen {
     position: fixed;
     top: 50%;
